@@ -6,7 +6,8 @@ const session = require('express-session');
 const cors = require('cors');
 const app = express();
 app.use(cors());
-mongoose.connect('mongodb+srv://arslankibria:<k6fP8SQs7BK9iNFD>@cluster1.hw10gks.mongodb.net/', { useNewUrlParser: true, useUnifiedTopology: true })
+const dbURI = 'mongodb+srv://arslankibria:k6fP8SQs7BK9iNFD@cluster1.hw10gks.mongodb.net/mydatabase?retryWrites=true&w=majority&ssl=true';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Could not connect to MongoDB:', err));
 
